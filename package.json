@@ -1,0 +1,23 @@
+{
+  "name": "electron-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-HodgePodge/electron-chat-app.git"
+  },
+  "author": "Dylan Krajnc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-HodgePodge/electron-chat-app/issues"
+  },
+  "homepage": "https://github.com/Mr-HodgePodge/electron-chat-app#readme",
+  "dependencies": {
+    "electron": "^23.1.4"
+  }
+}
