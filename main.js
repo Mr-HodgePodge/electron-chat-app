@@ -7,12 +7,12 @@ function createWindow() {
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: true,
+      worldSafeExecuteJavaScript: true,
+      contextIsolation: true,
     }
   })
 
-  win.loadFile('index.html').then(r => () => {})
+  win.loadFile('index.html').then(r => {});
 }
 
-app.whenReady().then(() => {
-  createWindow();
-})
+app.whenReady().then(createWindow);
