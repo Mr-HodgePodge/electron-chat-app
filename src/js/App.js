@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function App() {
-  const title = "Hello World Update";
+  const title = "Hello World";
   const enhancedTitle = title + ' - React App!';
 
   return (
