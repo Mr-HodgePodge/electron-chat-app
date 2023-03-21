@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain, Notification } = require('electron');
 const path = require('path');
 const isDev = !app.isPackaged;
 
@@ -10,7 +10,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       worldSafeExecuteJavaScript: true,
-      contextIsolation: true,
+      contextIsolation: false,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
@@ -24,3 +25,7 @@ if (isDev) {
 }
 
 app.whenReady().then(createWindow);
+
+ipcMain.on('notify', (_, message) => {
+  new Notification({title: 'Notification', body: message}).show();
+});
