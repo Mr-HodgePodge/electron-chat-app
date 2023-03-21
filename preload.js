@@ -1,6 +1,8 @@
-const { ipcRenderer } = require('electron');
-
-window.sendNotification = (message) => {
-  console.log('hello');
-  ipcRenderer.send('notify', message);
-}
+const { ipcRenderer, contextBridge } = require('electron');
+contextBridge.exposeInMainWorld('electronApi', {
+  notificationApi: {
+    sendNotification(message) {
+      ipcRenderer.send('notify', message);
+    }
+  }
+})

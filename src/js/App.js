@@ -5,7 +5,7 @@ export default function App() {
   const enhancedTitle = title + ' - React App!';
 
   const sendNotification = () => {
-    window.sendNotification('Custom Message!');
+    electronApi.notificationApi.sendNotification('Custom Message!');
   }
 
   return (
